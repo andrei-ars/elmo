@@ -13,7 +13,7 @@ def elmo_vectors(x):
             sess.run(tf.global_variables_initializer())
             sess.run(tf.tables_initializer())
             # return average of ELMo features
-            return sess.run(tf.reduce_mean(embeddings,1))
+            return sess.run(tf.reduce_mean(embeddings, 1))
 
 
 #corpus=["I'd like an apple juice",
@@ -49,7 +49,7 @@ for i in range(len(corpus)):
     vectors = elmo_vectors([corpus[i]])
     elmo_embeddings.append(vectors[0])
     print("i={}, text={}".format(i, corpus[i]))
-    print("shape: {}".format(vectors.shape))
+    print("shape: {}".format(vectors))
 
 print(elmo_embeddings, len(elmo_embeddings))
 print(elmo_embeddings[0].shape)
