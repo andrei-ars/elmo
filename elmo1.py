@@ -6,14 +6,14 @@ import tensorflow as tf
 elmo = hub.Module("https://tfhub.dev/google/elmo/2", trainable=True)
 
 def elmo_vectors(x):
-  embeddings=elmo(x, signature="default", as_dict=True)["elmo"]
+    embeddings=elmo(x, signature="default", as_dict=True)["elmo"]
 
-  with tf.device('/device:GPU:0'):
-    with tf.Session() as sess:
-      sess.run(tf.global_variables_initializer())
-      sess.run(tf.tables_initializer())
-      # return average of ELMo features
-      return sess.run(tf.reduce_mean(embeddings,1))
+    with tf.device('/device:CPU:0'):  # GPU:0
+        with tf.Session() as sess:
+            sess.run(tf.global_variables_initializer())
+            sess.run(tf.tables_initializer())
+            # return average of ELMo features
+            return sess.run(tf.reduce_mean(embeddings,1))
 
 
 corpus=["I'd like an apple juice",
