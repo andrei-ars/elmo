@@ -37,9 +37,9 @@ corpus=["First name",
 """
 
 corpus=["Click on the button below",
-        "open website",
-        "Press this link and go",
-         "navigate web page"]
+        "Open the following website",
+        "Press this label in the bottom",
+         "navigate to web page with url"]
 
 
 elmo_embeddings=[]
