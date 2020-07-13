@@ -36,9 +36,9 @@ corpus=["First name",
 # [0.4558046  0.43921626 0.41435632 0.50063854 0.9999999 ]]
 """
 
-corpus=["A car",
-        "the tree",
-        "transport"]
+corpus=["dog",
+        "cat",
+        "orrange"]
 
 
 elmo_embeddings=[]
