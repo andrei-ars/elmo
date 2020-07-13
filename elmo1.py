@@ -37,8 +37,8 @@ corpus=["First name",
 """
 
 corpus=["Click on the button below",
+        "open website",
         "Press this link and go",
-         "open website",
          "navigate web page"]
 
 
