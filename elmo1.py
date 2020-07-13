@@ -39,7 +39,7 @@ corpus=["First name",
 corpus=["dog",
         "cat",
         "orrange",
-        "butty"]
+        "animal"]
 
 
 elmo_embeddings=[]
