@@ -6,7 +6,7 @@ import tensorflow as tf
 elmo = hub.Module("https://tfhub.dev/google/elmo/2", trainable=True)
 
 def elmo_vectors(x):
-    embeddings=elmo(x, signature="default", as_dict=True)["elmo"]
+    embeddings = elmo(x, signature="default", as_dict=True)["elmo"]
 
     with tf.device('/device:CPU:0'):  # GPU:0
         with tf.Session() as sess:
@@ -39,16 +39,17 @@ corpus=["First name",
 corpus=["The day was bad",
         "It was the worst day in my life",
         "Google like search in internet"]
-#[[0.9999995  0.8062273  0.26702714 0.70145786]
-# [0.8062273  1.         0.28539488 0.6637589 ]
-# [0.26702714 0.28539488 0.99999976 0.2872051 ]
-# [0.70145786 0.6637589  0.2872051  1.0000001 ]]
+#[[1.         0.65336514 0.26608497]
+# [0.65336514 0.9999999  0.295992  ]
+# [0.26608497 0.295992   0.9999999 ]]
 
 elmo_embeddings=[]
 print(len(corpus))
 for i in range(len(corpus)):
-    print (corpus[i])
-    elmo_embeddings.append(elmo_vectors([corpus[i]])[0])
+    vectors = elmo_vectors([corpus[i]])
+    elmo_embeddings.append(vectors[0])
+    print("i={}, text={}".format(i, corpus[i]))
+    print("shape: {}".format(vectors.shape))
 
 print(elmo_embeddings, len(elmo_embeddings))
 print(elmo_embeddings[0].shape)
