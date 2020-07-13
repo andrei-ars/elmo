@@ -36,12 +36,18 @@ corpus=["First name",
 # [0.4558046  0.43921626 0.41435632 0.50063854 0.9999999 ]]
 """
 
-corpus=["The day was bad",
-        "It was the worst day in my life",
-        "Google like search in internet"]
+#corpus=["The day was bad",
+#        "It was the worst day in my life",
+#        "Google like search in internet"]
 #[[1.         0.65336514 0.26608497]
 # [0.65336514 0.9999999  0.295992  ]
 # [0.26608497 0.295992   0.9999999 ]]
+
+corpus=["Go to a street",
+        "Go outside outdoor",
+        "Please stay at home"]
+
+
 
 elmo_embeddings=[]
 print(len(corpus))
