@@ -36,10 +36,9 @@ corpus=["First name",
 # [0.4558046  0.43921626 0.41435632 0.50063854 0.9999999 ]]
 """
 
-corpus=["Click on the button below",
-        "Open the following website",
-        "Press this label in the bottom",
-         "navigate to web page with url"]
+corpus=["A car",
+        "the tree",
+        "transport"]
 
 
 elmo_embeddings=[]
