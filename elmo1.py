@@ -16,21 +16,26 @@ def elmo_vectors(x):
             return sess.run(tf.reduce_mean(embeddings,1))
 
 
-corpus=["I'd like an apple juice",
-        "An apple a day keeps the doctor away",
-         "Eat apple every day",
-         "We buy apples every week",
-         "We use machine learning for text classification",
-         "Text classification is subfield of machine learning"]
+#corpus=["I'd like an apple juice",
+#        "An apple a day keeps the doctor away",
+#         "Eat apple every day",
+#         "We buy apples every week",
+#         "We use machine learning for text classification",
+#         "Text classification is subfield of machine learning"]
 
+corpus=["First name",
+        "Second name",
+         "Given name",
+         "Last name",
+         "Surname"]
 
 elmo_embeddings=[]
-print (len(corpus))
+print(len(corpus))
 for i in range(len(corpus)):
     print (corpus[i])
     elmo_embeddings.append(elmo_vectors([corpus[i]])[0])
 
-print ( elmo_embeddings, len(elmo_embeddings))
+print(elmo_embeddings, len(elmo_embeddings))
 print(elmo_embeddings[0].shape)
 sims = cosine_similarity(elmo_embeddings, elmo_embeddings)
 print(sims)
