@@ -36,10 +36,9 @@ corpus=["First name",
 # [0.4558046  0.43921626 0.41435632 0.50063854 0.9999999 ]]
 """
 
-corpus=["dog",
-        "cat",
-        "orrange",
-        "carrot"]
+corpus=["The day was bad",
+        "It was the worst day in my life",
+        "Google like search in internet"]
 #[[0.9999995  0.8062273  0.26702714 0.70145786]
 # [0.8062273  1.         0.28539488 0.6637589 ]
 # [0.26702714 0.28539488 0.99999976 0.2872051 ]
