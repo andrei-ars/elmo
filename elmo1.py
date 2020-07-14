@@ -43,9 +43,9 @@ corpus=["First name",
 # [0.65336514 0.9999999  0.295992  ]
 # [0.26608497 0.295992   0.9999999 ]]
 
-corpus=["Go to a street",
-        "Go outside outdoor",
-        "Please stay at home"]
+corpus=["alcoholic",
+        "hot",
+        "coffee"]
 
 
 
