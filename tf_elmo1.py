@@ -47,11 +47,13 @@ corpus=["street",
         "city",
         "small",
         "little"]
+#[[1.0000002  0.51538455 0.2784447  0.25581774]
+# [0.51538455 1.         0.23203374 0.21967307]
+# [0.2784447  0.23203374 0.9999995  0.47890684]
+# [0.25581774 0.21967307 0.47890684 0.9999999 ]]
 
 
-
-elmo_embeddings=[]
-print(len(corpus))
+elmo_embeddings = []
 for i in range(len(corpus)):
     vectors = elmo_vectors([corpus[i]])
     elmo_embeddings.append(vectors[0])
