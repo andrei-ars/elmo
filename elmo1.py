@@ -44,6 +44,7 @@ corpus=["First name",
 # [0.26608497 0.295992   0.9999999 ]]
 
 corpus=["street",
+        "city",
         "small",
         "little"]
 
