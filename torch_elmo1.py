@@ -3,9 +3,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from allennlp.commands.elmo import ElmoEmbedder
 
-options_file = 'https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway_5.5B/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json'
-weight_file = 'https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway_5.5B/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5'
-elmo = ElmoEmbedder(options_file=options_file, weight_file=weight_file)
+#options_file = 'https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway_5.5B/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json'
+#weight_file = 'https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway_5.5B/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5'
+#elmo = ElmoEmbedder(options_file=options_file, weight_file=weight_file)
 # or
 elmo = ElmoEmbedder() # By default
 layer = 2 # output layer 
