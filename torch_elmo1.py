@@ -42,15 +42,16 @@ corpus = [["street"], ["city"], ["small"], ["little"]]
 #scipy.spatial.distance.cosine(vecs1[2][0], vecs3[2][0])
 #scipy.spatial.distance.cosine(vecs2[2][0], vecs3[2][0])
 
+texts = ["long street", "the large city", "small button", "little long button"]
 
-corpus = [["long street"], ["the large city"], ["small button"], ["little button"]]
+#corpus = [["long street"], ["the large city"], ["small button"], ["little button"]]
+corpus = [[text] for text in texts]
 elmo_embeddings = [np.mean(elmo.embed_sentence(tokens)[layer], axis=0) for tokens in corpus]
 sims = cosine_similarity(elmo_embeddings, elmo_embeddings)
 print(corpus)
 print(sims)
 print()
 
-texts = ["long street", "the large city", "small button", "little button"]
 corpus = [text.split() for text in texts]
 elmo_embeddings = [np.mean(elmo.embed_sentence(tokens)[layer], axis=0) for tokens in corpus]
 sims = cosine_similarity(elmo_embeddings, elmo_embeddings)
