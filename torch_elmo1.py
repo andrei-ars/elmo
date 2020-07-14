@@ -1,8 +1,10 @@
 #import scipy
+import logging
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from allennlp.commands.elmo import ElmoEmbedder
 
+logging.info("Loading of ELMo...")
 #options_file = 'https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway_5.5B/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json'
 #weight_file = 'https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway_5.5B/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5'
 #elmo = ElmoEmbedder(options_file=options_file, weight_file=weight_file)
@@ -13,11 +15,13 @@ layer = 2 # output layer
 #tokens = ["I", "ate", "an", "apple", "for", "breakfast"]
 #vectors = elmo.embed_sentence(tokens)
 
+logging.info("The calculation of embeddings")
 corpus = [["First", "name"], ["Second", "name"], ["Given", "name"], ["Last", "name"]]
 elmo_embeddings = [np.mean(elmo.embed_sentence(tokens)[layer], axis=0) for tokens in corpus]
 sims = cosine_similarity(elmo_embeddings, elmo_embeddings)
+print(corpus)
 print(sims)
-print(sims.shape)
+print()
 #[[1.0000001  0.8678259  0.6146674  0.73796856]
 # [0.8678259  0.99999976 0.5989584  0.7129174 ]
 # [0.6146674  0.5989584  1.0000002  0.63083917]
@@ -42,4 +46,14 @@ corpus = [["street"], ["city"], ["small"], ["little"]]
 corpus = [["long street"], ["the large city"], ["small button"], ["little button"]]
 elmo_embeddings = [np.mean(elmo.embed_sentence(tokens)[layer], axis=0) for tokens in corpus]
 sims = cosine_similarity(elmo_embeddings, elmo_embeddings)
+print(corpus)
 print(sims)
+print()
+
+texts = ["long street", "the large city", "small button", "little button"]
+corpus = [text.split() for text in texts]
+elmo_embeddings = [np.mean(elmo.embed_sentence(tokens)[layer], axis=0) for tokens in corpus]
+sims = cosine_similarity(elmo_embeddings, elmo_embeddings)
+print(corpus)
+print(sims)
+print()
