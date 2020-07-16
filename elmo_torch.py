@@ -12,10 +12,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from allennlp.commands.elmo import ElmoEmbedder
 
-
 logging.info("Loading of ELMo...")
-elmo = ElmoEmbedder() # By default
-# or
+elmo = ElmoEmbedder()   # by default
+# or you can use another model
 #options_file = 'https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway_5.5B/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json'
 #weight_file = 'https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway_5.5B/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5'
 #elmo = ElmoEmbedder(options_file=options_file, weight_file=weight_file)
@@ -27,8 +26,7 @@ elmo = ElmoEmbedder() # By default
 def similarity_matrix(corpus):
     """
     corpus = [["First", "name"], ["Second", "name"], ["Given", "name"], ["Last", "name"]]
-    or
-    corpus = [["First name"], ["Second name"], ["Given name"], ["Last name"]]
+    or corpus = [["First name"], ["Second name"], ["Given name"], ["Last name"]]
     """
     layer = 2   # the output layer 
     logging.info("The calculation of embeddings")
@@ -62,7 +60,7 @@ if __name__ == "__main__":
     print(corpus)
     print(similarity_matrix(corpus))
 
-    texts = ["small town", "the city", "small button", "button above"]    
+    texts = ["small town", "the city", "small button", "button in the corner of the page"]
     corpus = [[text] for text in texts]
     print("\n", corpus)
     print(similarity_matrix(corpus))
