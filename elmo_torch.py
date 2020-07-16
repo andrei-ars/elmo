@@ -43,10 +43,14 @@ def find_most_similar(text, texts):
     texts = ["long street", "the large city", "small button", "little long button"]
     """
     #corpus = [[t] for t in texts]
-    texts = [text] + texts
-    corpus = [t.split() for t in texts]
+    ext_texts = [text] + texts
+    print(texts)
+    corpus = [t.split() for t in ext_texts]
     ext_sims = similarity_matrix(corpus)
     print(ext_sims)
+    print()
+    print(ext_sims[0,1:])
+    print()
     index = np.argmax(ext_sims[0,1:]) - 1
     sim = ext_sims[0, index+1]
     return index, sim
