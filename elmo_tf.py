@@ -1,3 +1,5 @@
+# https://ai.stackexchange.com/questions/13926/can-elmo-embeddings-be-used-to-find-the-n-most-similar-sentences
+
 from sklearn.metrics.pairwise import cosine_similarity
 
 import tensorflow_hub as hub
