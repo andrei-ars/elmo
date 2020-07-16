@@ -94,6 +94,6 @@ if __name__ == "__main__":
     texts = ["simple button", "simple user", "just users", "site administrator", "user password", "open website"]
     sims = find_most_similar(text, texts)
 
-    text = "enter phrase"
+    text = "enter a phrase"
     texts = ["simple button", "input text", "site administrator", "user name", "open website"]
     sims = find_most_similar(text, texts)
