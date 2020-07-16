@@ -51,7 +51,7 @@ def find_most_similar(text, texts):
     print()
     print(ext_sims[0,1:])
     print()
-    index = np.argmax(ext_sims[0,1:]) - 1
+    index = np.argmax(ext_sims[0,1:])
     sim = ext_sims[0, index+1]
     return index, sim
 
