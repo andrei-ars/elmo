@@ -59,13 +59,15 @@ def find_most_similar(text, texts):
 if __name__ == "__main__":
 
     corpus = [["password"], ["city"], ["small"], ["little"]]
+    print(corpus)
     print(similarity_matrix(corpus))
 
-    texts = ["small town", "the city", "small button", "button above"]
-    print(texts)
+    texts = ["small town", "the city", "small button", "button above"]    
     corpus = [[text] for text in texts]
+    print("\n", corpus)
     print(similarity_matrix(corpus))
     corpus = [text.split() for text in texts]
+    print("\n", corpus)
     print(similarity_matrix(corpus))
 
     text = "the huge button"
