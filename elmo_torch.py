@@ -53,7 +53,7 @@ def find_most_similar(text, texts):
     print("similarities: {}".format(sims))
     print("index={}, cos_similarity={}".format(index, sims[index]))
     print("The most similary text to '{}' is text #{}: '{}'".format(text, index, texts[index]))
-    return index, sims
+    return sims
 
 
 if __name__ == "__main__":
@@ -84,13 +84,13 @@ if __name__ == "__main__":
     """
     text = "the huge button"
     texts = ["long street", "the large city", "small button", "large button"]
-    index, sims = find_most_similar(text, texts)
+    sims = find_most_similar(text, texts)
 
     text = "username"
     texts = ["site administrator", "simple button", "user name", "user login", "user password", "go to website"]
-    index, sims = find_most_similar(text, texts)
+    sims = find_most_similar(text, texts)
 
 
     text = "admin"
-    texts = ["site administrator", "simple button", "simple user", "just users", "user password", "open website"]
-    index, sims = find_most_similar(text, texts)
+    texts = ["simple button", "simple user", "just users", "site administrator", "user password", "open website"]
+    sims = find_most_similar(text, texts)
