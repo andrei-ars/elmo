@@ -58,30 +58,16 @@ def find_most_similar(text, texts):
 
 if __name__ == "__main__":
 
-    corpus = [["street"], ["city"], ["small"], ["little"]]
+    corpus = [["password"], ["city"], ["small"], ["little"]]
     print(similarity_matrix(corpus))
-    #[[1.0000002  0.5662099  0.2778135  0.2351715 ]
-    # [0.5662099  0.9999998  0.24516752 0.23961285]
-    # [0.2778135  0.24516752 0.99999976 0.53718054]
-    # [0.2351715  0.23961285 0.53718054 0.9999998 ]]
 
-    texts = ["long street", "the large city", "small button", "little long button"]
+    texts = ["small town", "the city", "small button", "button above"]
     print(texts)
     corpus = [[text] for text in texts]
     print(similarity_matrix(corpus))
     corpus = [text.split() for text in texts]
     print(similarity_matrix(corpus))
-    """
-    [[1.         0.75627625 0.66477364 0.7094424 ]
-     [0.75627625 0.99999964 0.66632223 0.7353818 ]
-     [0.66477364 0.66632223 1.0000001  0.8111696 ]
-     [0.7094424  0.7353818  0.8111696  0.99999976]]
-    
-    [[1.0000002  0.5136549  0.45660293 0.6065997 ]
-     [0.5136549  1.         0.552847   0.4276201 ]
-     [0.45660293 0.552847   0.9999996  0.71048474]
-     [0.6065997  0.4276201  0.71048474 1.0000001 ]]
-    """
+
     text = "the huge button"
     texts = ["long street", "the large city", "small button", "large button"]
     sims = find_most_similar(text, texts)
