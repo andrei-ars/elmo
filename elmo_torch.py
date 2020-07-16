@@ -45,8 +45,10 @@ def find_most_similar(text, texts):
     #corpus = [[t] for t in texts]
     ext_texts = [text] + texts
     corpus = [t.split() for t in ext_texts]
-    ext_sims = similarity_matrix(corpus)
-    index = np.argmax(ext_sims[0,1:])
+    sim_matrix = similarity_matrix(corpus)
+    sims = sim_matrix[0,1:]
+    print("similarities: {}".format(sims))
+    index = np.argmax(sims)
     sim = ext_sims[0, index+1]
     return index, sim
 
@@ -79,6 +81,13 @@ if __name__ == "__main__":
      [0.6065997  0.4276201  0.71048474 1.0000001 ]]
     """
     text = "tiny label"
+    texts = ["long street", "the large city", "small button", "little long button"]
+    index, sim = find_most_similar(text, texts)
+    print("index={}, cos_similarity={}".format(index, sim))
+    print("the most similary text:", texts[index])
+
+    text = "username"
+    texts = ["site administrator", "simple button", "user name", "user login", "user password", "go to website"]
     index, sim = find_most_similar(text, texts)
     print("index={}, cos_similarity={}".format(index, sim))
     print("the most similary text:", texts[index])
