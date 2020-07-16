@@ -60,7 +60,7 @@ if __name__ == "__main__":
     print(corpus)
     print(similarity_matrix(corpus))
 
-    texts = ["small town", "the city", "small button", "button in the corner of the page"]
+    texts = ["a huge town", "the city", "small button", "button in the corner of the page"]
     corpus = [[text] for text in texts]
     print("\n", corpus)
     print(similarity_matrix(corpus))
