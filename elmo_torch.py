@@ -60,10 +60,11 @@ if __name__ == "__main__":
 
     texts = ["long street", "the large city", "small button", "little long button"]
     print(texts)
-    corpus = [[text] for text in texts]
-    print(similarity_matrix(corpus))
     corpus = [text.split() for text in texts]
     print(similarity_matrix(corpus))
+    corpus = [[text] for text in texts]
+    print(similarity_matrix(corpus))
+
     """
     [[1.         0.75627625 0.66477364 0.7094424 ]
      [0.75627625 0.99999964 0.66632223 0.7353818 ]
