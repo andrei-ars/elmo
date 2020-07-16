@@ -89,3 +89,8 @@ if __name__ == "__main__":
     text = "username"
     texts = ["site administrator", "simple button", "user name", "user login", "user password", "go to website"]
     index, sims = find_most_similar(text, texts)
+
+
+    text = "admin"
+    texts = ["site administrator", "simple button", "simple user", "just users", "user password", "open website"]
+    index, sims = find_most_similar(text, texts)
