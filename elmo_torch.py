@@ -48,9 +48,11 @@ def find_most_similar(text, texts):
     sim_matrix = similarity_matrix(corpus)
     sims = sim_matrix[0,1:]
     index = np.argmax(sims)
+    print("\ntext: {}".format(text))
+    print("texts: {}".format(texts))
     print("similarities: {}".format(sims))
     print("index={}, cos_similarity={}".format(index, sims[index]))
-    print("the most similary text to '{}' is text #{}: '{}'", text, index, texts[index])
+    print("The most similary text to '{}' is text #{}: '{}'".format(text, index, texts[index]))
     return index, sims
 
 
