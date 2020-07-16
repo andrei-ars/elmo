@@ -39,8 +39,8 @@ def similarity_matrix(corpus):
 
 def find_most_similar(text, texts):
     """
-    text = "click the label"
-    texts = ["long street", "the large city", "small button", "little long button"]
+    text = "huge button"
+    texts = ["long street", "the large city", "small button", "large button"]
     """
     #corpus = [[t] for t in texts]
     ext_texts = [text] + texts
@@ -82,8 +82,8 @@ if __name__ == "__main__":
      [0.45660293 0.552847   0.9999996  0.71048474]
      [0.6065997  0.4276201  0.71048474 1.0000001 ]]
     """
-    text = "tiny label"
-    texts = ["long street", "the large city", "small button", "little long button"]
+    text = "the huge button"
+    texts = ["long street", "the large city", "small button", "large button"]
     index, sims = find_most_similar(text, texts)
 
     text = "username"
